@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RuiQi WAF - Enterprise Web Application Firewall</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" type="image/png" href="images/favicon.svg">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="images/logo.svg" alt="RuiQi WAF Logo" height="40">
+                RuiQi WAF
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#architecture">Architecture</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#deployment">Deployment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="btn btn-primary ms-lg-3" href="#demo">Try Demo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h1 class="display-4 fw-bold mb-4">Enterprise-Grade Web Application Firewall</h1>
+                    <p class="lead mb-4">Protect your web applications with next-generation WAF technology powered by HAProxy and Coraza. Defend against OWASP Top 10 threats with advanced security and minimal performance impact.</p>
+                    <div class="d-flex gap-3">
+                        <a href="#demo" class="btn btn-primary btn-lg">Get Started</a>
+                        <a href="#features" class="btn btn-outline-light btn-lg">Learn More</a>
+                    </div>
+                    <div class="mt-4 hero-badges">
+                        <span class="badge rounded-pill"><i class="fas fa-shield-alt"></i> OWASP Compliant</span>
+                        <span class="badge rounded-pill"><i class="fas fa-tachometer-alt"></i> High Performance</span>
+                        <span class="badge rounded-pill"><i class="fas fa-project-diagram"></i> Cloud Native</span>
+                        <span class="badge rounded-pill"><i class="fas fa-lock"></i> Enterprise Security</span>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="hero-image">
+                        <img src="images/hero-dashboard.svg" alt="RuiQi WAF Dashboard" class="img-fluid rounded-3 shadow">
+                        <div class="hero-image-circle-1"></div>
+                        <div class="hero-image-circle-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-wave">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+                <path fill="#ffffff" fill-opacity="1" d="M0,160L48,144C96,128,192,96,288,106.7C384,117,480,171,576,176C672,181,768,139,864,122.7C960,107,1056,117,1152,138.7C1248,160,1344,192,1392,208L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Key Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Comprehensive Protection</h2>
+                <p class="lead">Advanced security features to protect your web applications</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>OWASP Top 10 Protection</h3>
+                        <p>Full coverage against injection attacks, XSS, CSRF, and other critical web application vulnerabilities with continuous updates.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tachometer-alt"></i>
+                        </div>
+                        <h3>High Performance</h3>
+                        <p>Optimized architecture with <5ms latency impact and 10,000+ requests/second throughput on standard hardware.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-project-diagram"></i>
+                        </div>
+                        <h3>Cloud Native Design</h3>
+                        <p>Seamless deployment in Kubernetes, Docker and traditional environments with horizontal scaling capability.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-robot"></i>
+                        </div>
+                        <h3>Bot Protection</h3>
+                        <p>Advanced behavioral analysis to distinguish between legitimate users, good bots, and malicious automation.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-code"></i>
+                        </div>
+                        <h3>API Security</h3>
+                        <p>Specialized protection for REST, GraphQL and SOAP APIs with schema validation and anomaly detection.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-plug"></i>
+                        </div>
+                        <h3>Virtual Patching</h3>
+                        <p>Apply immediate protection against zero-day vulnerabilities without modifying application code.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section id="architecture" class="architecture-section">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Advanced Architecture</h2>
+                <p class="lead">Combining HAProxy and Coraza WAF for unparalleled security</p>
+            </div>
+            
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="architecture-image">
+                        <img src="images/architecture.svg" alt="RuiQi WAF Architecture" class="img-fluid rounded-3 shadow">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="architecture-content ms-lg-4">
+                        <h3>Multi-Engine Fusion Architecture</h3>
+                        <p>RuiQi WAF leverages a sophisticated architecture that combines high-performance proxy capabilities with deep security inspection:</p>
+                        
+                        <div class="architecture-feature d-flex align-items-start mt-4">
+                            <div class="architecture-feature-icon me-3">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div>
+                                <h4>HAProxy Frontend Layer</h4>
+                                <p>High-performance HTTP/HTTPS proxy with TLS 1.3 support, basic filtering, and intelligent traffic distribution.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="architecture-feature d-flex align-items-start mt-4">
+                            <div class="architecture-feature-icon me-3">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <div>
+                                <h4>Coraza WAF Core Engine</h4>
+                                <p>Next-generation open-source WAF engine compatible with ModSecurity, supporting OWASP CRS and custom rules.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="architecture-feature d-flex align-items-start mt-4">
+                            <div class="architecture-feature-icon me-3">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div>
+                                <h4>SPOE Communication</h4>
+                                <p>Efficient communication protocol between HAProxy and Coraza, optimizing detection performance.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Deployment Section -->
+    <section id="deployment" class="deployment-section">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Flexible Deployment</h2>
+                <p class="lead">Deploy anywhere with simple, scalable architecture</p>
+            </div>
+            
+            <div class="row g-4">
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="deployment-card">
+                        <div class="deployment-icon">
+                            <i class="fas fa-globe"></i>
+                        </div>
+                        <h3>Edge Deployment</h3>
+                        <p>Deploy at network edge as first line of defense against external attacks.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="deployment-card">
+                        <div class="deployment-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3>Application Front</h3>
+                        <p>Direct protection for application servers with precise security controls.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="deployment-card">
+                        <div class="deployment-icon">
+                            <i class="fas fa-layer-group"></i>
+                        </div>
+                        <h3>Layered Protection</h3>
+                        <p>Edge + application-front dual protection for defense-in-depth architecture.</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6" data-aos="fade-up" data-aos-delay="400">
+                    <div class="deployment-card">
+                        <div class="deployment-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3>Service Mesh</h3>
+                        <p>Seamless integration with Istio/Linkerd as a security component for microservices.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-5" data-aos="fade-up">
+                <a href="#demo" class="btn btn-primary btn-lg">Try Demo Deployment</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Section -->
+    <section id="demo" class="demo-section">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>See It In Action</h2>
+                <p class="lead">Experience RuiQi WAF with one-click deployment</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-10" data-aos="fade-up">
+                    <div class="demo-card">
+                        <div class="row align-items-center">
+                            <div class="col-md-6">
+                                <h3>Try RuiQi WAF Now</h3>
+                                <p>Deploy a fully functional instance in less than 30 seconds with our Sealos integration. No setup required!</p>
+                                <ul class="demo-features">
+                                    <li><i class="fas fa-check-circle"></i> Full admin dashboard access</li>
+                                    <li><i class="fas fa-check-circle"></i> Pre-configured security rules</li>
+                                    <li><i class="fas fa-check-circle"></i> Live traffic inspection</li>
+                                    <li><i class="fas fa-check-circle"></i> Real-time analytics</li>
+                                </ul>
+                                <div class="mt-4">
+                                    <a href="https://usw.sealos.io/?openapp=system-template%3FtemplateName%3DRuiqi-Waf" class="btn btn-primary" target="_blank">
+                                        <img src="images/sealos-icon.svg" height="24" class="me-2" alt="Sealos">
+                                        Deploy on Sealos
+                                    </a>
+                                    <p class="small mt-2">Default username: <strong>admin</strong> | Default password: <strong>admin123</strong></p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="demo-image">
+                                    <img src="images/dashboard.svg" alt="RuiQi WAF Dashboard" class="img-fluid rounded shadow">
+                                    <div class="demo-pulse"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial Section -->
+    <section class="testimonial-section">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Trusted by Security Professionals</h2>
+                <p class="lead">What our users say about RuiQi WAF</p>
+            </div>
+            
+            <div class="testimonial-slider" data-aos="fade-up">
+                <div class="row">
+                    <div class="col-lg-4 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"RuiQi WAF provides enterprise-grade protection without the enterprise price tag. The performance is impressive with minimal impact on our response times."</p>
+                            </div>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <div class="testimonial-avatar">
+                                    <img src="images/avatar-1.jpg" alt="Security Director">
+                                </div>
+                                <div class="ms-3">
+                                    <h5>Chen Wei</h5>
+                                    <p class="small">Security Director, Financial Tech Co.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The integration with our existing infrastructure was seamless. We're now blocking sophisticated attacks that were previously going undetected."</p>
+                            </div>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <div class="testimonial-avatar">
+                                    <img src="images/avatar-2.jpg" alt="CTO">
+                                </div>
+                                <div class="ms-3">
+                                    <h5>Lin Jingyi</h5>
+                                    <p class="small">CTO, E-commerce Platform</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="col-lg-4 mb-4">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p>"The dashboard provides incredible visibility into attack patterns. We've used these insights to strengthen our overall security posture."</p>
+                            </div>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <div class="testimonial-avatar">
+                                    <img src="images/avatar-3.jpg" alt="Security Analyst">
+                                </div>
+                                <div class="ms-3">
+                                    <h5>Zhang Mei</h5>
+                                    <p class="small">Security Analyst, Government Agency</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <div class="section-header text-center mb-5" data-aos="fade-up">
+                <h2>Get in Touch</h2>
+                <p class="lead">Have questions about RuiQi WAF? We're here to help.</p>
+            </div>
+            
+            <div class="row justify-content-center">
+                <div class="col-lg-8" data-aos="fade-up">
+                    <div class="contact-card">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h3>Contact Information</h3>
+                                <div class="contact-info mt-4">
+                                    <div class="d-flex mb-3">
+                                        <div class="contact-icon me-3">
+                                            <i class="fas fa-map-marker-alt"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Address</h5>
+                                            <p>Room 323, Houde Building, Jiujiang University, 551 Qianjin East Road, Lianxi District, Jiujiang, Jiangxi</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex mb-3">
+                                        <div class="contact-icon me-3">
+                                            <i class="fas fa-phone-alt"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Phone</h5>
+                                            <p>+86 18679200828</p>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="d-flex">
+                                        <div class="contact-icon me-3">
+                                            <i class="fas fa-envelope"></i>
+                                        </div>
+                                        <div>
+                                            <h5>Support</h5>
+                                            <p>Visit our GitHub repository</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6">
+                                <h3>Connect With Us</h3>
+                                <form class="contact-form mt-4">
+                                    <div class="mb-3">
+                                        <input type="text" class="form-control" placeholder="Your Name" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <input type="email" class="form-control" placeholder="Your Email" required>
+                                    </div>
+                                    <div class="mb-3">
+                                        <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn-primary">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer-section">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <img src="images/logo.svg" alt="RuiQi WAF Logo" height="40" class="mb-3">
+                    <h4 class="text-white">RuiQi WAF</h4>
+                    <p>Enterprise-grade web application firewall protection with modern architecture and exceptional performance.</p>
+                    <div class="social-links mt-4">
+                        <a href="https://github.com/HUAHUAI23/simple-waf" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Product</h5>
+                    <ul class="footer-links">
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#architecture">Architecture</a></li>
+                        <li><a href="#deployment">Deployment</a></li>
+                        <li><a href="#demo">Demo</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Resources</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">API Reference</a></li>
+                        <li><a href="#">White Paper</a></li>
+                        <li><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6 mb-4 mb-md-0">
+                    <h5>Company</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                    </ul>
+                </div>
+                
+                <div class="col-lg-2 col-md-6">
+                    <h5>Support</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Community</a></li>
+                        <li><a href="#">Status</a></li>
+                        <li><a href="https://github.com/HUAHUAI23/simple-waf" target="_blank">GitHub</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <hr class="footer-divider">
+            
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0">&copy; 2025 RuiQi WAF Team. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                    <a href="#" class="footer-link">Terms of Service</a>
+                    <a href="#" class="footer-link ms-3">Privacy Policy</a>
+                    <a href="#" class="footer-link ms-3">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top">
+        <i class="fas fa-chevron-up"></i>
+    </a>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html> 
