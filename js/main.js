@@ -9,6 +9,9 @@ document.addEventListener('DOMContentLoaded', function() {
         offset: 50
     });
 
+    // Initialize scroll reveal animations
+    initScrollReveal();
+
     // Navbar scroll effect
     const navbar = document.querySelector('.navbar');
     window.addEventListener('scroll', function() {
@@ -354,6 +357,33 @@ document.addEventListener('DOMContentLoaded', function() {
             this.style.setProperty('--y', `${y}px`);
         });
     }
+
+    // Auto-close mobile menu when clicking on nav links
+    const navLinks = document.querySelectorAll('.navbar-nav .nav-link, .navbar-nav .btn');
+    navLinks.forEach(link => {
+        link.addEventListener('click', function() {
+            const navbarCollapse = document.querySelector('.navbar-collapse.show');
+            if (navbarCollapse) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+            }
+        });
+    });
+
+    // Auto-close mobile menu when clicking outside
+    document.addEventListener('click', function(e) {
+        const navbarCollapse = document.querySelector('.navbar-collapse.show');
+        if (navbarCollapse) {
+            const isClickInside = navbarCollapse.contains(e.target);
+            const isNavbarToggler = e.target.classList.contains('navbar-toggler') || 
+                                   e.target.closest('.navbar-toggler');
+            
+            if (!isClickInside && !isNavbarToggler) {
+                const bsCollapse = new bootstrap.Collapse(navbarCollapse);
+                bsCollapse.hide();
+            }
+        }
+    });
 });
 
 // Simulate loading for the demo section
@@ -427,4 +457,28 @@ const addIconBounceAnimation = () => {
 };
 
 // Add the animation style
-document.addEventListener('DOMContentLoaded', addIconBounceAnimation); 
+document.addEventListener('DOMContentLoaded', addIconBounceAnimation);
+
+// Initialize scroll reveal animations
+function initScrollReveal() {
+    const scrollRevealItems = document.querySelectorAll('.scroll-reveal');
+    
+    const options = {
+        root: null,
+        rootMargin: '0px',
+        threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+    
+    scrollRevealItems.forEach(item => {
+        observer.observe(item);
+    });
+} 

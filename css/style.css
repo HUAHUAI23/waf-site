@@ -18,6 +18,16 @@
     --transition-speed: 0.3s;
 }
 
+/* Hide scrollbar but keep functionality */
+html {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+html::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
 /* General Styles */
 body {
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -238,14 +248,24 @@ a:hover {
     border: none;
     padding: 0;
     color: var(--text-light);
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 4px;
+    padding: 5px 8px;
 }
 
 .navbar.scrolled .navbar-toggler {
     color: var(--primary-dark);
+    background-color: rgba(94, 53, 177, 0.05);
 }
 
 .navbar-toggler:focus {
     box-shadow: none;
+}
+
+.navbar-toggler-icon {
+    display: inline-block;
+    width: 1.5em;
+    height: 1.5em;
 }
 
 /* Hero Section */
@@ -1016,11 +1036,71 @@ a:hover {
     }
     
     .navbar-collapse {
-        background-color: white;
+        background-color: var(--bg-dark);
         padding: 20px;
         border-radius: 10px;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         margin-top: 15px;
+    }
+    
+    .navbar.scrolled .navbar-collapse {
+        background-color: white;
+    }
+    
+    .navbar-nav .nav-link,
+    .navbar-nav .nav-link:visited,
+    .navbar-nav .nav-link:active,
+    .navbar-nav .nav-link:focus {
+        color: white !important;
+        padding: 10px 0;
+        font-size: 1.1rem;
+    }
+    
+    .navbar.scrolled .navbar-nav .nav-link,
+    .navbar.scrolled .navbar-nav .nav-link:visited,
+    .navbar.scrolled .navbar-nav .nav-link:active,
+    .navbar.scrolled .navbar-nav .nav-link:focus {
+        color: var(--primary-dark) !important;
+    }
+    
+    .navbar-nav .nav-link.active,
+    .navbar-nav .nav-link:hover {
+        color: var(--primary-light) !important;
+    }
+    
+    .navbar.scrolled .navbar-nav .nav-link.active,
+    .navbar.scrolled .navbar-nav .nav-link:hover {
+        color: var(--primary) !important;
+    }
+    
+    /* Fix "Try Demo" button in mobile view */
+    .navbar-nav .btn.btn-primary {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+        color: white !important;
+    }
+    
+    .navbar.scrolled .navbar-nav .btn.btn-primary {
+        color: white !important;
+    }
+    
+    /* GitHub icon in mobile menu */
+    .github-icon .nav-link {
+        padding: 10px 0;
+        justify-content: flex-start;
+        margin-left: 0;
+    }
+    
+    .github-icon .nav-link i {
+        margin-right: 10px;
+    }
+    
+    .github-icon .nav-link::after {
+        content: "GitHub";
+        font-size: 1.1rem;
+        font-weight: 600;
+        font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     }
     
     .section {
@@ -1034,6 +1114,40 @@ a:hover {
     
     .feature-card, .deployment-card, .testimonial-card, .contact-card, .demo-card {
         padding: 20px;
+    }
+    
+    .lang-switcher {
+        margin-left: 0;
+        margin-top: 1rem;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .lang-toggle-btn {
+        color: white;
+        width: 100%;
+        max-width: 200px;
+        justify-content: center;
+        padding: 10px;
+        font-size: 1rem;
+    }
+    
+    .navbar.scrolled .lang-toggle-btn {
+        color: var(--primary-dark);
+    }
+    
+    /* Better separation between nav items in mobile menu */
+    .navbar-nav .nav-item {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .navbar.scrolled .navbar-nav .nav-item {
+        border-bottom: 1px solid rgba(94, 53, 177, 0.1);
+    }
+    
+    .navbar-nav .nav-item:last-child {
+        border-bottom: none;
     }
 }
 
@@ -1149,4 +1263,109 @@ a:hover {
         margin-left: 0;
         margin-top: 1rem;
     }
+}
+
+/* GitHub Icon in Navigation */
+.github-icon .nav-link {
+    font-size: 1.3rem;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    margin-left: 0.5rem;
+}
+
+.github-icon .nav-link:hover {
+    transform: translateY(-2px) rotate(5deg);
+    color: var(--primary-light) !important;
+}
+
+.navbar.scrolled .github-icon .nav-link:hover {
+    color: var(--primary) !important;
+}
+
+.github-icon .fa-github {
+    transition: all 0.3s ease;
+}
+
+/* Hide scrollbar for all scrollable containers */
+.navbar-collapse,
+.feature-card,
+.testimonial-card,
+.contact-card,
+.demo-card,
+.deployment-card,
+textarea.form-control {
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+.navbar-collapse::-webkit-scrollbar,
+.feature-card::-webkit-scrollbar,
+.testimonial-card::-webkit-scrollbar,
+.contact-card::-webkit-scrollbar,
+.demo-card::-webkit-scrollbar,
+.deployment-card::-webkit-scrollbar,
+textarea.form-control::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera */
+}
+
+/* Smooth scrolling for the entire page */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+    /* Better touch targets for mobile */
+    .nav-link,
+    .btn,
+    .lang-toggle-btn,
+    .github-icon .nav-link {
+        padding: 12px 15px;
+    }
+    
+    /* Optimize scrolling on touch devices */
+    html, body {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    /* Disable hover effects that might cause flicker on touch */
+    .feature-card:hover,
+    .deployment-card:hover,
+    .testimonial-card:hover,
+    .contact-card:hover,
+    .demo-card:hover {
+        transform: none;
+    }
+    
+    /* Ensure buttons have good touch response */
+    .btn:active {
+        transform: scale(0.97);
+        transition: transform 0.1s;
+    }
+}
+
+/* Scroll reveal animations */
+.scroll-reveal {
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.scroll-reveal.from-bottom {
+    transform: translateY(50px);
+}
+
+.scroll-reveal.from-left {
+    transform: translateX(-50px);
+}
+
+.scroll-reveal.from-right {
+    transform: translateX(50px);
+}
+
+.scroll-reveal.visible {
+    opacity: 1;
+    transform: translate(0, 0);
 } 
