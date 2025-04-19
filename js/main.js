@@ -37,10 +37,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-    // Smooth scrolling for all anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            if (this.getAttribute('href') !== '#') {
+    // Unified button click handling (simplified to avoid conflicts)
+    const buttons = document.querySelectorAll('.btn-primary, .btn-outline-light, a[href^="#"]');
+    
+    buttons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            // Create ripple effect
+            if (this.classList.contains('btn-primary') || this.classList.contains('btn-outline-light')) {
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                
+                this.style.setProperty('--x', `${x}px`);
+                this.style.setProperty('--y', `${y}px`);
+            }
+            
+            // If this is an anchor with # link, handle smooth scrolling
+            if (this.getAttribute('href') && this.getAttribute('href').startsWith('#') && this.getAttribute('href') !== '#') {
                 e.preventDefault();
                 
                 const targetId = this.getAttribute('href');
@@ -149,6 +162,91 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    // Add modern square animations to Hero section
+    function createSquareAnimations() {
+        const heroSection = document.querySelector('.hero-section');
+        if (!heroSection) return;
+        
+        // Create container for squares if it doesn't exist
+        let squaresContainer = document.querySelector('.squares-container');
+        if (!squaresContainer) {
+            squaresContainer = document.createElement('div');
+            squaresContainer.className = 'squares-container';
+            squaresContainer.style.position = 'absolute';
+            squaresContainer.style.top = '0';
+            squaresContainer.style.left = '0';
+            squaresContainer.style.width = '100%';
+            squaresContainer.style.height = '100%';
+            squaresContainer.style.overflow = 'hidden';
+            squaresContainer.style.pointerEvents = 'none'; // Ensure it doesn't block clicks
+            squaresContainer.style.zIndex = '0';
+            heroSection.prepend(squaresContainer);
+        }
+        
+        // Number of squares based on screen size
+        const squareCount = window.innerWidth < 768 ? 15 : 30;
+        
+        // Create squares with random properties
+        for (let i = 0; i < squareCount; i++) {
+            const square = document.createElement('div');
+            
+            // Random size category
+            const sizeClass = Math.random() < 0.33 ? 'small' : Math.random() < 0.66 ? 'medium' : 'large';
+            square.className = `square-animation ${sizeClass}`;
+            
+            // Random starting position
+            square.style.left = `${Math.random() * 100}%`;
+            square.style.top = `${Math.random() * 100}%`;
+            
+            // Random rotation
+            square.style.transform = `rotate(${Math.random() * 360}deg)`;
+            
+            // Random animation duration between 15 and 30 seconds
+            const duration = Math.random() * 15 + 15;
+            square.style.animationDuration = `${duration}s`;
+            
+            // Random animation delay
+            const delay = Math.random() * 10;
+            square.style.animationDelay = `${delay}s`;
+            
+            // Random transparency
+            square.style.opacity = (Math.random() * 0.3 + 0.1).toString();
+            
+            // 50% chance of being a square or rectangle
+            if (Math.random() > 0.5) {
+                square.style.width = `${parseInt(square.style.width) * (Math.random() * 1.5 + 0.5)}px`;
+            }
+            
+            // Add some rotation to the animation
+            square.style.animationTimingFunction = 'linear';
+            square.style.pointerEvents = 'none'; // Ensure it doesn't block clicks
+            
+            // 30% chance of having a border
+            if (Math.random() < 0.3) {
+                square.style.border = '1px solid rgba(255, 255, 255, 0.3)';
+                square.style.backgroundColor = 'transparent';
+            } else if (Math.random() < 0.5) {
+                // 20% chance of having a gradient background
+                const hue = Math.floor(Math.random() * 30) + 240; // Purple-ish hues
+                square.style.backgroundColor = `hsla(${hue}, 70%, 60%, 0.2)`;
+            }
+            
+            squaresContainer.appendChild(square);
+        }
+    }
+    
+    // Initialize square animations
+    createSquareAnimations();
+    
+    // Re-create square animations on window resize
+    window.addEventListener('resize', function() {
+        const squaresContainer = document.querySelector('.squares-container');
+        if (squaresContainer) {
+            squaresContainer.innerHTML = '';
+            createSquareAnimations();
+        }
+    });
+
     // Add particles background effect to the hero section
     function createParticles() {
         const heroSection = document.querySelector('.hero-section');
@@ -163,6 +261,7 @@ document.addEventListener('DOMContentLoaded', function() {
         particlesContainer.style.height = '100%';
         particlesContainer.style.overflow = 'hidden';
         particlesContainer.style.zIndex = '0';
+        particlesContainer.style.pointerEvents = 'none'; // Ensure it doesn't block clicks
         
         heroSection.prepend(particlesContainer);
         
@@ -181,6 +280,7 @@ document.addEventListener('DOMContentLoaded', function() {
             particle.style.backgroundColor = 'rgba(255, 255, 255, 0.2)';
             particle.style.top = `${Math.random() * 100}%`;
             particle.style.left = `${Math.random() * 100}%`;
+            particle.style.pointerEvents = 'none'; // Ensure it doesn't block clicks
             
             // Random animation duration between 10 and 20 seconds
             const duration = Math.random() * 10 + 10;
@@ -217,6 +317,43 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Initialize particles
     createParticles();
+
+    // Enhanced contact section interactivity
+    const contactIcons = document.querySelectorAll('.contact-icon');
+    if (contactIcons) {
+        contactIcons.forEach(icon => {
+            // Add bounce animation
+            icon.style.animation = `iconBounce ${3 + Math.random()}s infinite`;
+            
+            // Add click handler
+            icon.addEventListener('click', function() {
+                // Find the nearest link or handle specific actions
+                const container = this.closest('.d-flex');
+                if (container) {
+                    if (this.querySelector('.fa-map-marker-alt')) {
+                        window.open('https://maps.google.com/?q=Jiujiang University, 551 Qianjin East Road', '_blank');
+                    } else if (this.querySelector('.fa-phone-alt')) {
+                        window.location.href = 'tel:+8618679200828';
+                    } else if (this.querySelector('.fa-envelope')) {
+                        window.open('https://github.com/HUAHUAI23/simple-waf', '_blank');
+                    }
+                }
+            });
+        });
+    }
+
+    // Add ripple effect to the contact form button
+    const contactButton = document.querySelector('.contact-form button');
+    if (contactButton) {
+        contactButton.addEventListener('click', function(e) {
+            const rect = this.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            
+            this.style.setProperty('--x', `${x}px`);
+            this.style.setProperty('--y', `${y}px`);
+        });
+    }
 });
 
 // Simulate loading for the demo section
@@ -268,4 +405,26 @@ window.addEventListener('load', function() {
             newImg.src = src;
         }
     });
-}); 
+});
+
+// Define keyframes for icon bounce animation
+const addIconBounceAnimation = () => {
+    if (document.querySelector('#iconBounceStyle')) return;
+    
+    const style = document.createElement('style');
+    style.id = 'iconBounceStyle';
+    style.textContent = `
+        @keyframes iconBounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-5px) scale(1.1);
+            }
+        }
+    `;
+    document.head.appendChild(style);
+};
+
+// Add the animation style
+document.addEventListener('DOMContentLoaded', addIconBounceAnimation); 
