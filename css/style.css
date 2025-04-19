@@ -1101,4 +1101,52 @@ a:hover {
 .navbar.scrolled .btn-primary:visited {
     color: white !important;
     background: linear-gradient(135deg, #673ab7, #7e57c2, #9575cd);
+}
+
+/* Language Switcher */
+.lang-switcher {
+    margin-left: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.lang-toggle-btn {
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all var(--transition-speed);
+    background-color: rgba(255, 255, 255, 0.1);
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.lang-toggle-btn:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.lang-toggle-btn i {
+    font-size: 0.8rem;
+}
+
+.navbar.scrolled .lang-toggle-btn {
+    color: var(--primary-dark);
+    border-color: rgba(94, 53, 177, 0.5);
+    background-color: rgba(94, 53, 177, 0.05);
+}
+
+.navbar.scrolled .lang-toggle-btn:hover {
+    background-color: rgba(94, 53, 177, 0.1);
+}
+
+@media (max-width: 767.98px) {
+    .lang-switcher {
+        margin-left: 0;
+        margin-top: 1rem;
+    }
 } 
