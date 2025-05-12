@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f8f9fa" rx="20" ry="20" />
+  
+  <!-- Title -->
+  <text x="400" y="40" font-family="Arial, sans-serif" font-size="24" font-weight="bold" text-anchor="middle" fill="#5e35b1">RuiQi WAF Architecture</text>
+  
+  <!-- Boxes -->
+  <!-- Client Browser -->
+  <rect x="50" y="100" width="150" height="60" rx="10" ry="10" fill="#ffffff" stroke="#b39ddb" stroke-width="2" />
+  <text x="125" y="140" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333333">Client Browser</text>
+  
+  <!-- HAProxy Frontend Layer -->
+  <linearGradient id="haproxy-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#9575cd" />
+    <stop offset="100%" stop-color="#7e57c2" />
+  </linearGradient>
+  <rect x="300" y="100" width="200" height="80" rx="10" ry="10" fill="url(#haproxy-gradient)" />
+  <text x="400" y="130" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">HAProxy</text>
+  <text x="400" y="155" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ffffff">Frontend Layer</text>
+  
+  <!-- SPOE -->
+  <rect x="300" y="220" width="200" height="60" rx="10" ry="10" fill="#ffffff" stroke="#b39ddb" stroke-width="2" />
+  <text x="400" y="255" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#5e35b1">SPOE Communication</text>
+  
+  <!-- Coraza WAF -->
+  <linearGradient id="coraza-gradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <stop offset="0%" stop-color="#7e57c2" />
+    <stop offset="100%" stop-color="#673ab7" />
+  </linearGradient>
+  <rect x="300" y="320" width="200" height="80" rx="10" ry="10" fill="url(#coraza-gradient)" />
+  <text x="400" y="350" font-family="Arial, sans-serif" font-size="18" font-weight="bold" text-anchor="middle" fill="#ffffff">Coraza WAF</text>
+  <text x="400" y="375" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#ffffff">Security Engine</text>
+  
+  <!-- Backend Applications -->
+  <rect x="600" y="100" width="150" height="300" rx="10" ry="10" fill="#ffffff" stroke="#b39ddb" stroke-width="2" />
+  <text x="675" y="140" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#333333">Backend</text>
+  <text x="675" y="160" font-family="Arial, sans-serif" font-size="16" text-anchor="middle" fill="#333333">Applications</text>
+  
+  <!-- App Icons -->
+  <rect x="625" y="180" width="100" height="40" rx="5" ry="5" fill="#f0f0f0" />
+  <text x="675" y="205" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Web Server</text>
+  
+  <rect x="625" y="240" width="100" height="40" rx="5" ry="5" fill="#f0f0f0" />
+  <text x="675" y="265" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">API Server</text>
+  
+  <rect x="625" y="300" width="100" height="40" rx="5" ry="5" fill="#f0f0f0" />
+  <text x="675" y="325" font-family="Arial, sans-serif" font-size="14" text-anchor="middle" fill="#333333">Database</text>
+  
+  <!-- Arrows -->
+  <!-- Client to HAProxy -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5e35b1" />
+    </marker>
+  </defs>
+  <line x1="200" y1="130" x2="300" y2="130" stroke="#5e35b1" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- HAProxy to Backend -->
+  <line x1="500" y1="130" x2="600" y2="130" stroke="#5e35b1" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- HAProxy to SPOE -->
+  <line x1="400" y1="180" x2="400" y2="220" stroke="#5e35b1" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- SPOE to Coraza -->
+  <line x1="400" y1="280" x2="400" y2="320" stroke="#5e35b1" stroke-width="2" marker-end="url(#arrowhead)" />
+  
+  <!-- Legend -->
+  <rect x="50" y="420" width="700" height="60" rx="10" ry="10" fill="#ffffff" stroke="#b39ddb" stroke-width="2" />
+  
+  <!-- Legend Items -->
+  <circle cx="80" y="440" r="8" fill="url(#haproxy-gradient)" />
+  <text x="100" y="445" font-family="Arial, sans-serif" font-size="14" fill="#333333">Core Components</text>
+  
+  <circle cx="230" y="440" r="8" fill="#ffffff" stroke="#b39ddb" stroke-width="2" />
+  <text x="250" y="445" font-family="Arial, sans-serif" font-size="14" fill="#333333">External Systems</text>
+  
+  <line x1="350" y1="440" x2="380" y2="440" stroke="#5e35b1" stroke-width="2" marker-end="url(#arrowhead)" />
+  <text x="430" y="445" font-family="Arial, sans-serif" font-size="14" fill="#333333">Data Flow</text>
+  
+  <!-- Five Phase Processing -->
+  <rect x="50" y="200" width="150" height="200" rx="10" ry="10" fill="#ffffff" stroke="#b39ddb" stroke-width="2" />
+  <text x="125" y="225" font-family="Arial, sans-serif" font-size="14" font-weight="bold" text-anchor="middle" fill="#5e35b1">5-Phase Processing</text>
+  
+  <rect x="70" y="240" width="110" height="25" rx="5" ry="5" fill="#f0f0f0" />
+  <text x="125" y="257" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">1. Request Headers</text>
+  
+  <rect x="70" y="275" width="110" height="25" rx="5" ry="5" fill="#f0f0f0" />
+  <text x="125" y="292" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">2. Request Body</text>
+  
+  <rect x="70" y="310" width="110" height="25" rx="5" ry="5" fill="#f0f0f0" />
+  <text x="125" y="327" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">3. Response Headers</text>
+  
+  <rect x="70" y="345" width="110" height="25" rx="5" ry="5" fill="#f0f0f0" />
+  <text x="125" y="362" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">4. Response Body</text>
+  
+  <rect x="70" y="380" width="110" height="25" rx="5" ry="5" fill="#f0f0f0" />
+  <text x="125" y="397" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#333333">5. Logging</text>
+</svg> 

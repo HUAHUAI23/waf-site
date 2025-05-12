@@ -1,7 +1,7 @@
 // Internationalization handler for RuiQi WAF website
 
 // Default language
-let currentLanguage = 'en';
+let currentLanguage = 'en'
 
 // Language translations
 const translations = {
@@ -13,7 +13,7 @@ const translations = {
     'nav-deployment': 'Deployment',
     'nav-contact': 'Contact',
     'nav-try-demo': 'Try Demo',
-    
+
     // Hero Section
     'hero-title': 'Enterprise-Grade Web Application Firewall',
     'hero-description': 'Protect your web applications with next-generation WAF technology powered by HAProxy and Coraza. Defend against OWASP Top 10 threats with advanced security and minimal performance impact.',
@@ -23,7 +23,7 @@ const translations = {
     'hero-badge-performance': 'High Performance',
     'hero-badge-cloud': 'Cloud Native',
     'hero-badge-security': 'Enterprise Security',
-    
+
     // Features Section
     'features-title': 'Comprehensive Protection',
     'features-subtitle': 'Advanced security features to protect your web applications',
@@ -39,7 +39,7 @@ const translations = {
     'feature-api-desc': 'Specialized protection for REST, GraphQL and SOAP APIs with schema validation and anomaly detection.',
     'feature-patch-title': 'Virtual Patching',
     'feature-patch-desc': 'Apply immediate protection against zero-day vulnerabilities without modifying application code.',
-    
+
     // Architecture Section
     'arch-title': 'Advanced Architecture',
     'arch-subtitle': 'Combining HAProxy and Coraza WAF for unparalleled security',
@@ -51,7 +51,7 @@ const translations = {
     'arch-coraza-desc': 'Next-generation open-source WAF engine compatible with ModSecurity, supporting OWASP CRS and custom rules.',
     'arch-spoe-title': 'SPOE Communication',
     'arch-spoe-desc': 'Efficient communication protocol between HAProxy and Coraza, optimizing detection performance.',
-    
+
     // Deployment Section
     'deploy-title': 'Flexible Deployment',
     'deploy-subtitle': 'Deploy anywhere with simple, scalable architecture',
@@ -64,7 +64,7 @@ const translations = {
     'deploy-mesh-title': 'Service Mesh',
     'deploy-mesh-desc': 'Seamless integration with Istio/Linkerd as a security component for microservices.',
     'deploy-try-demo': 'Try Demo Deployment',
-    
+
     // Demo Section
     'demo-title': 'See It In Action',
     'demo-subtitle': 'Experience RuiQi WAF with one-click deployment',
@@ -76,11 +76,11 @@ const translations = {
     'demo-feature-4': 'Real-time analytics',
     'demo-deploy-btn': 'Deploy on Sealos',
     'demo-credentials': 'Default username: <strong>admin</strong> | Default password: <strong>admin123</strong>',
-    
+
     // Testimonial Section
     'testimonial-title': 'Trusted by Security Professionals',
     'testimonial-subtitle': 'What our users say about RuiQi WAF',
-    
+
     // Contact Section
     'contact-title': 'Get in Touch',
     'contact-subtitle': 'Have questions about RuiQi WAF? We\'re here to help.',
@@ -95,7 +95,7 @@ const translations = {
     'contact-form-email': 'Your Email',
     'contact-form-message': 'Your Message',
     'contact-form-send': 'Send Message',
-    
+
     // Footer
     'footer-description': 'Enterprise-grade web application firewall protection with modern architecture and exceptional performance.',
     'footer-product': 'Product',
@@ -125,7 +125,7 @@ const translations = {
     'nav-deployment': '部署',
     'nav-contact': '联系我们',
     'nav-try-demo': '试用演示',
-    
+
     // Hero Section
     'hero-title': '企业级Web应用防火墙',
     'hero-description': '利用HAProxy和Coraza提供的下一代WAF技术保护您的Web应用。防御OWASP Top 10威胁，提供高级安全保障，同时最小化性能影响。',
@@ -135,7 +135,7 @@ const translations = {
     'hero-badge-performance': '高性能',
     'hero-badge-cloud': '云原生',
     'hero-badge-security': '企业级安全',
-    
+
     // Features Section
     'features-title': '全面保护',
     'features-subtitle': '保护您Web应用的高级安全功能',
@@ -151,7 +151,7 @@ const translations = {
     'feature-api-desc': '针对REST、GraphQL和SOAP API的专业保护，包括架构验证和异常检测。',
     'feature-patch-title': '虚拟补丁',
     'feature-patch-desc': '无需修改应用代码，即可立即防御零日漏洞。',
-    
+
     // Architecture Section
     'arch-title': '先进架构',
     'arch-subtitle': '结合HAProxy和Coraza WAF提供无与伦比的安全性',
@@ -163,7 +163,7 @@ const translations = {
     'arch-coraza-desc': '新一代开源WAF引擎，兼容ModSecurity，支持OWASP CRS及自定义规则。',
     'arch-spoe-title': 'SPOE通信',
     'arch-spoe-desc': 'HAProxy与Coraza之间的高效通信协议，优化检测性能。',
-    
+
     // Deployment Section
     'deploy-title': '灵活部署',
     'deploy-subtitle': '简单、可扩展的架构，随处部署',
@@ -176,7 +176,7 @@ const translations = {
     'deploy-mesh-title': '服务网格',
     'deploy-mesh-desc': '作为微服务安全组件，与Istio/Linkerd无缝集成。',
     'deploy-try-demo': '试用演示部署',
-    
+
     // Demo Section
     'demo-title': '实际体验',
     'demo-subtitle': '通过一键部署体验RuiQi WAF',
@@ -188,11 +188,11 @@ const translations = {
     'demo-feature-4': '实时分析',
     'demo-deploy-btn': '在Sealos上部署',
     'demo-credentials': '默认用户名: <strong>admin</strong> | 默认密码: <strong>admin123</strong>',
-    
+
     // Testimonial Section
     'testimonial-title': '安全专业人士的信任之选',
     'testimonial-subtitle': '用户对RuiQi WAF的评价',
-    
+
     // Contact Section
     'contact-title': '联系我们',
     'contact-subtitle': '对RuiQi WAF有疑问？我们随时为您提供帮助。',
@@ -207,7 +207,7 @@ const translations = {
     'contact-form-email': '您的邮箱',
     'contact-form-message': '您的留言',
     'contact-form-send': '发送留言',
-    
+
     // Footer
     'footer-description': '具有现代架构和卓越性能的企业级web应用防火墙保护。',
     'footer-product': '产品',
@@ -229,81 +229,84 @@ const translations = {
     'footer-terms': '服务条款',
     'footer-cookies': 'Cookie政策'
   }
-};
+}
 
 // Function to translate the page
 function translatePage(language) {
-  currentLanguage = language;
-  
+  currentLanguage = language
+
   // Save language preference to localStorage
-  localStorage.setItem('language', language);
-  
+  localStorage.setItem('language', language)
+
+  // Set the lang attribute on the HTML element
+  document.documentElement.setAttribute('lang', language)
+
   // Update language toggle button text
-  const langTextElement = document.querySelector('.lang-toggle-btn .lang-text');
+  const langTextElement = document.querySelector('.lang-toggle-btn .lang-text')
   if (langTextElement) {
-    langTextElement.textContent = language === 'en' ? 'EN' : '中';
+    langTextElement.textContent = language === 'en' ? 'EN' : '中'
   }
-  
+
   // Update all elements with data-i18n attribute
   document.querySelectorAll('[data-i18n]').forEach(element => {
-    const key = element.getAttribute('data-i18n');
+    const key = element.getAttribute('data-i18n')
     if (translations[language][key]) {
       // Handle elements that might contain HTML
       if (key.includes('credentials') || key.includes('copyright')) {
-        element.innerHTML = translations[language][key];
+        element.innerHTML = translations[language][key]
       } else {
-        element.textContent = translations[language][key];
+        element.textContent = translations[language][key]
       }
     }
-  });
-  
+  })
+
   // Handle placeholder attributes for form elements
   document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
-    const key = element.getAttribute('data-i18n-placeholder');
+    const key = element.getAttribute('data-i18n-placeholder')
     if (translations[language][key]) {
-      element.placeholder = translations[language][key];
+      element.placeholder = translations[language][key]
     }
-  });
+  })
 }
 
 // Function to toggle between languages
 function toggleLanguage() {
-  const newLanguage = currentLanguage === 'en' ? 'zh' : 'en';
-  translatePage(newLanguage);
+  const newLanguage = currentLanguage === 'en' ? 'zh' : 'en'
+  translatePage(newLanguage)
 }
 
 // Initialize language based on browser preferences or saved preference
 function initializeLanguage() {
   // Check for saved language preference
-  const savedLanguage = localStorage.getItem('language');
-  
+  const savedLanguage = localStorage.getItem('language')
+
   if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'zh')) {
-    translatePage(savedLanguage);
+    translatePage(savedLanguage)
   } else {
     // Detect browser language
-    const browserLanguage = navigator.language || navigator.userLanguage;
-    
+    const browserLanguage = navigator.language || navigator.userLanguage
+
     // Default to English, use Chinese if browser language starts with zh
     if (browserLanguage.startsWith('zh')) {
-      translatePage('zh');
+      translatePage('zh')
     } else {
-      translatePage('en');
+      translatePage('en')
     }
   }
-  
+
   // Add event listener to language toggle button
-  const langToggleBtn = document.querySelector('.lang-toggle-btn');
+  const langToggleBtn = document.querySelector('.lang-toggle-btn')
   if (langToggleBtn) {
-    langToggleBtn.addEventListener('click', toggleLanguage);
+    langToggleBtn.addEventListener('click', toggleLanguage)
   }
 }
 
 // Initialize when DOM is loaded
-document.addEventListener('DOMContentLoaded', initializeLanguage);
+document.addEventListener('DOMContentLoaded', initializeLanguage)
 
 // Export functions for use in other scripts
 window.i18n = {
   translatePage,
   toggleLanguage,
   getCurrentLanguage: () => currentLanguage
-}; 
+} 
