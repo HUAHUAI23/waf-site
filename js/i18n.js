@@ -128,7 +128,7 @@ const translations = {
 
     // Hero Section
     'hero-title': '企业级Web应用防火墙',
-    'hero-description': '利用HAProxy和Coraza提供的下一代WAF技术保护您的Web应用。防御OWASP Top 10威胁，提供高级安全保障，同时最小化性能影响。',
+    'hero-description': '利用HAProxy和Coraza提供的新一代WAF技术保护您的Web应用。防御OWASP Top 10威胁，提供高级安全保障，同时最小化性能影响。',
     'hero-get-started': '立即开始',
     'hero-learn-more': '了解更多',
     'hero-badge-owasp': 'OWASP合规',
